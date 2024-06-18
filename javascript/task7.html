@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Animation Control</title>
+    <style>
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .image-container {
+            position: relative;
+            display: inline-block;
+        }
+        .image-container img {
+            width: 150px;
+            height: auto;
+            animation: moveTrain 2s linear infinite;
+        }
+        @keyframes moveTrain {
+            0% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(200px);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="image-container">
+        <img src="images\train.png" alt="Moving Train">
+    </div>
+
+    <div class="button-container">
+        <button onclick="startAnimation()">Start Animation</button>
+        <button onclick="stopAnimation()">Stop Animation</button>
+    </div>
+</div>
+<script>
+    let animationId = null;
+
+    function startAnimation() {
+        const train = document.querySelector('.image-container img');
+        train.style.animationPlayState = 'running';
+    }
+
+    function stopAnimation() {
+        const train = document.querySelector('.image-container img');
+        train.style.animationPlayState = 'paused';
+    }
+</script>
+</body>
+</html>

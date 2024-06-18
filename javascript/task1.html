@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TASK-1</title>
+    <style>
+        .custom-container {
+            height: 786px;
+        }
+        .custom-title {
+            margin-top: 2rem;
+        }
+
+        .custom-input-section {
+            margin-top: 1rem;
+        }
+
+        .custom-button {
+            margin-left: 1rem;
+        }
+
+        .custom-output {
+            margin-top: 1rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <div class="container-fluid custom-container">
+        <div class="row">
+            <div class="col custom-title">
+                <h1>Reverse a Number</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col custom-input-section">
+                <p>Enter a number to reverse:</p><br>
+                <input type="number" id="inputNumber"><br>
+                <button class="btn btn-sm btn-primary custom-button" onclick="reverseAndDisplay()">Reverse</button>
+
+                <p class="custom-output">Reversed Number:</p>
+                <p id="reversedNumber" class="custom-output"></p>
+            </div>
+        </div>
+    </div>
+</center>
+    <script>
+        function reverseNumber(x) {
+            let numString = x.toString();
+            let reversedString = numString.split('').reverse().join('');
+            let reversedNumber = parseInt(reversedString, 10);
+
+            return reversedNumber;
+        }
+
+        function reverseAndDisplay() {
+            let inputElement = document.getElementById('inputNumber');
+            let inputValue = parseInt(inputElement.value);
+            let reversed = reverseNumber(inputValue);
+            let reversedNumberElement = document.getElementById('reversedNumber');
+            reversedNumberElement.textContent = reversed;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>javascript</title>
+    <style>
+        body {
+            background-color: #1e272e;
+            color: #f5f6fa;
+            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .custom-container {
+            width: 90%;
+            max-width: 600px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #2f3640;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .custom-header {
+            font-size: 2.5rem;
+            color: #e1b12c;
+            margin-bottom: 20px;
+        }
+
+        .custom-text {
+            margin-bottom: 10px;
+            color: #fbc531;
+        }
+
+        .custom-input-group {
+            display: flex;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+
+        .custom-input {
+            flex: 1;
+            padding: 10px;
+            font-size: 1rem;
+            border: 2px solid #e1b12c;
+            border-radius: 5px;
+            margin-right: 10px;
+            background-color: #353b48;
+            color: #f5f6fa;
+        }
+
+        .custom-button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #e1b12c;
+            color: #1e272e;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .custom-button:hover {
+            background-color: #fbc531;
+        }
+
+        .custom-result {
+            font-size: 1.5rem;
+            margin-top: 20px;
+            color: #4cd137;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="custom-container">
+        <h1 class="custom-header">Alphabetical Order of Letters</h1>
+        <p class="custom-text">Enter a string to sort its letters alphabetically:</p><br>
+        <div class="custom-input-group">
+            <input type="text" id="stringInput" class="custom-input" /><br>
+            <button class="custom-button" onclick="sortAndDisplay()">Sort</button>
+        </div>
+        <p class="custom-text">Sorted String:</p>
+        <p id="resultSorted" class="custom-result"></p>
+    </div>
+    <script>
+        function sortLettersAlphabetically(str) {
+            const lettersOnly = str.replace(/[^a-zA-Z]/g, '');
+            const sorted = lettersOnly.split('').sort().join('');
+            return sorted;
+        }
+
+        function sortAndDisplay() {
+            const inputElement = document.getElementById("stringInput");
+            const inputValue = inputElement.value;
+            const resultElement = document.getElementById("resultSorted");
+            const sortedString = sortLettersAlphabetically(inputValue);
+            resultElement.textContent = sortedString;
+        }
+    </script>
+</body>
+
+</html>
