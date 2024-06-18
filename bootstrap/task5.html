@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <style>
+        .form-control.is-invalid {
+            border-color: red;
+        }
+
+        .invalid-feedback {
+            display: block;
+            color: red;
+            font-size: 0.9em;
+        }
+
+        .input-group-text {
+            background-color: transparent;
+            border: none;
+        }
+
+        .input-group .form-control {
+            border-left: 0;
+        }
+
+        .input-group .form-control:focus {
+            box-shadow: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <form>
+            <div class="form-group">
+                <label for="firstNameCustom">First Name</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="fas fa-user"></i>
+                        </span>
+                    </div>
+                    <input type="text" class="form-control is-invalid" id="firstNameCustom" placeholder="First Name" />
+                </div>
+                <div class="invalid-feedback">Please supply your first name</div>
+            </div>
+            <div class="form-group">
+                <label for="lastNameCustom">Last Name</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="fas fa-user"></i>
+                        </span>
+                    </div>
+                    <input type="text" class="form-control is-invalid" id="lastNameCustom" placeholder="Last Name" />
+                </div>
+                <div class="invalid-feedback">Please supply your last name</div>
+            </div>
+            <div class="form-group">
+                <label for="emailCustom">E-Mail</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="fas fa-envelope"></i>
+                        </span>
+                    </div>
+                    <input type="email" class="form-control is-invalid" id="emailCustom" placeholder="E-Mail Address" />
+                </div>
+                <div class="invalid-feedback">Please supply your email address</div>
+            </div>
+            <div class="form-group">
+                <label for="phoneCustom">Phone #</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="fas fa-phone"></i>
+                        </span>
+                    </div>
+                    <input type="text" class="form-control is-invalid" id="phoneCustom" placeholder="(845)555-1212" />
+                </div>
+                <div class="invalid-feedback">Please supply your phone number</div>
+            </div>
+            <div class="form-group">
+                <label for="addressCustom">Address</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="fas fa-home"></i>
+                        </span>
+                    </div>
+                    <input type="text" class="form-control is-invalid" id="addressCustom" placeholder="Address" />
+                </div>
+                <div class="invalid-feedback">Please supply your street address</div>
+            </div>
+            <div class="form-group">
+                <label for="cityCustom">City</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="fas fa-city"></i>
+                        </span>
+                    </div>
+                    <input type="text" class="form-control is-invalid" id="cityCustom" placeholder="City" />
+                </div>
+                <div class="invalid-feedback">Please supply your city</div>
+            </div>
+            <div class="form-group">
+                <label for="stateCustom">State</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </span>
+                    </div>
+                    <select class="form-control" id="stateCustom">
+                        <option>Please select your state</option>
+                        <option value="NY">New York</option>
+                        <option value="CA">California</option>
+                        <!-- Add more states as needed -->
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Do you have hosting?</label>
+                <div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="hostingCustom" id="hostingYesCustom" value="yes" />
+                        <label class="form-check-label" for="hostingYesCustom">Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="hostingCustom" id="hostingNoCustom" value="no" />
+                        <label class="form-check-label" for="hostingNoCustom">No</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="projectDescriptionCustom">Project Description</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="fas fa-pencil-alt"></i>
+                        </span>
+                    </div>
+                    <textarea class="form-control" id="projectDescriptionCustom" rows="3" placeholder="Project Description"></textarea>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-warning">
+                Send <i class="fas fa-paper-plane"></i>
+            </button>
+        </form>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
